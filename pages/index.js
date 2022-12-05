@@ -41,7 +41,7 @@ export default function Home({propertiesForSale, propertiesForRent}) {
       />
 
       <Flex flex-wrap="wrap">
-        {/* {propertiesForRent.map((property) => <Property property={property} key={property.id} />)} */}
+        {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
       </Flex>
 
       <Banner purpose="Buy a Home"
@@ -55,20 +55,20 @@ export default function Home({propertiesForSale, propertiesForRent}) {
       />
 
       <Flex flex-wrap="wrap">
-      {/* {propertiesForSale.map((property) => <Property property={property} key={property.id} />)} */}
+        {propertiesForSale.map((property) => <Property property={property} key={property.id} />)}
       </Flex>
     </Box>
   )
 }
 
 export async function getStaticProps() {
-  const propertiesForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`);
-  const propertiesForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`);
+  const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`);
+  const propertyForRent  = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`);
 
   return {
     props: {
-      propertiesForSale: propertiesForSale?.hits || null,
-      propertiesForRent: propertiesForRent?.hits || null,
+      propertiesForSale: propertyForSale?.hits || null,
+      propertiesForRent: propertyForRent ?.hits || null,
     },
   };
 
