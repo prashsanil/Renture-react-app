@@ -13,10 +13,10 @@ const Banner = ({purpose, title1, title2, desc1, desc2, buttonText, linkName, im
         {purpose} 
       </Text>
       <Text fontSize="3xl" fontWeight="bold"> 
-        {title1} 
+        {title1} <br /> {title2}
       </Text>
       <Text fontSize="lg" paddingTop={3} paddingBottom="3" color="gray.500"> 
-        {desc1} 
+        {desc1} <br /> {desc2}
       </Text>
       <Button fontSize="xl">
         <Link href={linkName}> {buttonText} </Link>
