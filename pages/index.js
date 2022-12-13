@@ -28,7 +28,6 @@ const Banner = ({purpose, title1, title2, desc1, desc2, buttonText, linkName, im
 export default function Home({propertiesForSale, propertiesForRent}) {
   return (
     <Box>
-      <h1>Hello World!</h1>
       <Banner purpose="Rent a Home"
         title1="Rental Homes for"
         title2="Everyone!"
